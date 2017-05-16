@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on GSoC Report</title>
+    <link>https://szymag.github.io/post/</link>
+    <description>Recent content in Posts on GSoC Report</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 16 May 2017 23:41:21 +0100</lastBuildDate>
+    
+	<atom:link href="https://szymag.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Week -2</title>
+      <link>https://szymag.github.io/post/week--2/</link>
+      <pubDate>Tue, 16 May 2017 23:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week--2/</guid>
+      <description>The end of may is quite busy for me. I have to finish some projects on my University before the end of month, to be sure that I will able to spend enough time on GSoC. Everything is on track, so there&amp;rsquo;s no reason to worry.
+At the weekend I&amp;rsquo;m going to spend time on looking into SymPy, especially into diffgeom module. I would like to find some idea, witch could be use in my project.</description>
+    </item>
+    
+  </channel>
+</rss>
