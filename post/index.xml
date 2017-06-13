@@ -6,10 +6,20 @@
     <description>Recent content in Posts on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 02 Jun 2017 23:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jun 2017 19:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 2</title>
+      <link>https://szymag.github.io/post/week-2/</link>
+      <pubDate>Tue, 13 Jun 2017 19:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-2/</guid>
+      <description>My second week I spent on introducing Lame coefficients into CoordSysCartesian. Unfortunately, our work is restricted by SymPy structure so, we don&amp;rsquo;t have too much freedom in our implementation. Hopefully, with my mentor, Francesco, we found some solution how to achieve our goals without destroying vector module. This week shows that I have lack in my knowledge about object-oriented programming and SymPy.
+Having access to Lame coefficient I was able to modified Del operator (in mathematics nabla operators) to handle spherical and cylindrical coordinate system.</description>
+    </item>
     
     <item>
       <title>Week 1</title>

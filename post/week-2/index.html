@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-uk">
   <head>
-	<meta name="generator" content="Hugo 0.20.7" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
@@ -19,10 +18,10 @@
     <title>
       
       
-         GSoC Report 
+         Week 2 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-2/">
 
     <style>
   * {
@@ -380,8 +379,6 @@
     <link rel="shortcut icon" href="https://szymag.github.io/favicon.ico">
 
     
-      <link href="https://szymag.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GSoC Report" />
-    
   </head>
 
   <body>
@@ -394,35 +391,50 @@
 
 
 <section id=content>
-  <ul class=posts_listing>
+  <h1> Week 2 </h1>
+
+  <div id=sub-header>
+    13 June 2017 · 1 minute read
+  </div>
+
+  <div class="entry-content">
+    <p>My second week I spent on introducing Lame coefficients into <code>CoordSysCartesian</code>.
+Unfortunately, our work is restricted by SymPy structure so, we don&rsquo;t have too much freedom
+in our implementation. Hopefully, with my mentor, Francesco, we found some solution how to
+achieve our goals without destroying <code>vector</code> module. This week shows that I have lack in my
+knowledge about object-oriented programming and SymPy.</p>
+
+<p>Having access to Lame coefficient I was able to modified <code>Del</code> operator (in mathematics nabla operators) to handle spherical
+and cylindrical coordinate system. It was rather easy task. I had to only modified i.e. generalized <code>gradient</code>, <code>dot</code>,
+<code>cross</code> methods to any kind of orthogonal curvilinear system simply by multiplying by Lame factors. At that moment I
+stick only to this coordinate system. We can easily expand it to another in the future.</p>
+
+<p>Below is example how we can calculate <code>gradient</code>, <code>curl</code> and <code>divergence</code> in spherical coordinate system:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>A = CoordSysCartesian(<span style="font-style: italic">&#39;A&#39;</span>)
+A._set_lame_coefficient_mapping(<span style="font-style: italic">&#39;spherical&#39;</span>)
+
+gradient(3*A.x + 4*A.y)
+divergence(3*A.x*A.z*A.i + A.y*A.j + A.x*A.y*A.z*A.k)
+curl(A.x*A.i + A.y*A.j + A.z*A.k)
+</pre></div>
+
+<p>To sum up, This week I end up with two PR, which I think will be merged soon. We also started discussion
+about next step. I&rsquo;d say that the hardest difficulties are now in front of us.</p>
+
+  </div>
+
+  <div id=links>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-2/">Week 2</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-1/">&laquo; Week 1</a>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-1/">Week 1</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week--2/">Week -2/Week -1</a></h2>
-        <div id=date>
-          <time>May 2017</time>
-        </div>
-      </li>
-    
-  </ul>
+  </div>
 </section>
 
   </div>
   
 </body>
 </html>
+
 
 
