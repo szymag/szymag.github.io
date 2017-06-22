@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-uk">
   <head>
-	<meta name="generator" content="Hugo 0.20.7" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
@@ -19,10 +18,10 @@
     <title>
       
       
-         GSoC Report 
+         Week 3 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-3/">
 
     <style>
   * {
@@ -380,8 +379,6 @@
     <link rel="shortcut icon" href="https://szymag.github.io/favicon.ico">
 
     
-      <link href="https://szymag.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GSoC Report" />
-    
   </head>
 
   <body>
@@ -394,42 +391,58 @@
 
 
 <section id=content>
-  <ul class=posts_listing>
+  <h1> Week 3 </h1>
+
+  <div id=sub-header>
+    20 June 2017 · 2 minute read
+  </div>
+
+  <div class="entry-content">
+    <p>In the last week I focused mainly on finishing tasks related Lame coefficients. During this time two PR were merged.
+In my previous post I described how we can calculate gradient, curl and divergence in different type of coordinate
+system, so now I described only new thing which was already add to mainline.
+We decided to remove dependency between <code>Del</code> class and <code>CoordSysCartesian</code>. From mathematical point of view it
+makes sense, because <code>nabla</code> operator is just an entity which acts on vector or scalar and his behavior is independent
+from coordinate system. Now, when we want to use them, we need to call directly <code>Del</code> class.
+It was rather smooth change except, situation when we are dealing with object which is not created in CoordSysCartesian,
+<code>Vector.zero</code>. In that situation we can&rsquo;t obtain information about coordinate system, because neither <code>Del</code> nor object
+doesn&rsquo;t have them. The consequence of that fact is inability of leaving unevaluated value from such object.
+For example, previously, we could calculate curl and get result in following manner:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>delop ^ Vector.zero
+</pre></div>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>(Derivative(0, C.y) - Derivative(0, C.z))*C.i +
+(-Derivative(0, C.x) + Derivative(0, C.z))*C.j +
+(Derivative(0, C.x) - Derivative(0, C.y))*C.k
+</pre></div>
+
+<p>Now we cannot do that, so we need to automatically return 0.
+Below I demonstrate present usage of nabla operator on SymPy:</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>C = CoordSysCartesian(<span style="font-style: italic">&#39;C&#39;</span>)
+delop = Del()
+delop.dot(C.x*C.i)
+</pre></div>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Derivative(C.x, C.x)
+</pre></div>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>v = x*i + y*j + z*k
+delop &amp; v
+</pre></div>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Derivative(C.x, C.x) + Derivative(C.y, C.y) + Derivative(C.z, C.z))
+</pre></div>
+
+  </div>
+
+  <div id=links>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-3/">Week 3</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-2/">&laquo; Week 2</a>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-2/">Week 2</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-1/">Week 1</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
-    
-      <li>
-        <h2><a href="https://szymag.github.io/post/week--2/">Week -2/Week -1</a></h2>
-        <div id=date>
-          <time>May 2017</time>
-        </div>
-      </li>
-    
-  </ul>
+  </div>
 </section>
 
   </div>
   
 </body>
 </html>
+
 
 
