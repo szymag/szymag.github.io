@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GSoC Report</title>
+    <link>https://szymag.github.io/</link>
+    <description>Recent content on GSoC Report</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 20 Jun 2017 23:41:21 +0100</lastBuildDate>
+    
+	<atom:link href="https://szymag.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Week 3</title>
+      <link>https://szymag.github.io/post/week-3/</link>
+      <pubDate>Tue, 20 Jun 2017 23:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-3/</guid>
+      <description>In the last week I focused mainly on finishing tasks related Lame coefficients. During this time two PR were merged. In my previous post I described how we can calculate gradient, curl and divergence in different type of coordinate system, so now I described only new thing which was already add to mainline. We decided to remove dependency between Del class and CoordSysCartesian. From mathematical point of view it makes sense, because nabla operator is just an entity which acts on vector or scalar and his behavior is independent from coordinate system.</description>
+    </item>
+    
+    <item>
+      <title>Week 2</title>
+      <link>https://szymag.github.io/post/week-2/</link>
+      <pubDate>Tue, 13 Jun 2017 19:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-2/</guid>
+      <description>My second week I spent on introducing Lame coefficients into CoordSysCartesian. Unfortunately, our work is restricted by SymPy structure so, we don&amp;rsquo;t have too much freedom in our implementation. Hopefully, with my mentor, Francesco, we found some solution how to achieve our goals without destroying vector module. This week shows that I have lack in my knowledge about object-oriented programming and SymPy.
+Having access to Lame coefficient I was able to modified Del operator (in mathematics nabla operators) to handle spherical and cylindrical coordinate system.</description>
+    </item>
+    
+    <item>
+      <title>Week 1</title>
+      <link>https://szymag.github.io/post/week-1/</link>
+      <pubDate>Fri, 02 Jun 2017 23:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-1/</guid>
+      <description>My first task, which corresponds to GSoC was create three classes, Curl, Divergence, Gradient. They create object which are unevaluated mathematical expression. Sometimes it&amp;rsquo;s better working on such expression, for example when we wants to check some identity. We have to check if it&amp;rsquo;s true for every possible vector. We have still some work here, because in next step we want to create abstract vector expression. There is one open PR corresponding to described task:</description>
+    </item>
+    
+    <item>
+      <title>Week -2/Week -1</title>
+      <link>https://szymag.github.io/post/week--2/</link>
+      <pubDate>Tue, 16 May 2017 23:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week--2/</guid>
+      <description>The end of may is quite busy for me. I have to finish some projects on my University before the end of month, to be sure that I will able to spend enough time on GSoC. Everything is on track, so there&amp;rsquo;s no reason to worry.
+At the weekend I&amp;rsquo;m going to spend time on looking into SymPy, especially into diffgeom module. I would like to find some idea, witch could be use in my project.</description>
+    </item>
+    
+  </channel>
+</rss>
