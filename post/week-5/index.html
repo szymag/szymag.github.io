@@ -18,10 +18,10 @@
     <title>
       
       
-         Week 3 
+         Week 5 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/post/week-3/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-5/">
 
     <style>
   * {
@@ -391,47 +391,49 @@
 
 
 <section id=content>
-  <h1> Week 3 </h1>
+  <h1> Week 5 </h1>
 
   <div id=sub-header>
-    June 2017 · 2 minute read
+    July 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
-    <p>In the last week I focused mainly on finishing tasks related Lame coefficients. During this time two PR were merged.
-In my previous post I described how we can calculate gradient, curl and divergence in different type of coordinate
-system, so now I described only new thing which was already add to mainline.
-We decided to remove dependency between <code>Del</code> class and <code>CoordSysCartesian</code>. From mathematical point of view it
-makes sense, because <code>nabla</code> operator is just an entity which acts on vector or scalar and his behavior is independent
-from coordinate system. Now, when we want to use them, we need to call directly <code>Del</code> class.
-It was rather smooth change except, situation when we are dealing with object which is not created in CoordSysCartesian,
-<code>Vector.zero</code>. In that situation we can&rsquo;t obtain information about coordinate system, because neither <code>Del</code> nor object
-doesn&rsquo;t have them. The consequence of that fact is inability of leaving unevaluated value from such object.
-For example, previously, we could calculate curl and get result in following manner:</p>
-delop ^ Vector.zero
+    <p>This posts contains summary of two weeks work.</p>
 
-(Derivative(0, C.y) - Derivative(0, C.z))*C.i +
-(-Derivative(0, C.x) + Derivative(0, C.z))*C.j +
-(Derivative(0, C.x) - Derivative(0, C.y))*C.k
+<p>I was working on introducing transformation equations in <code>CoordSysCartesian</code>.
+We decide, up to now, to connect every other curvilinear coordinate system to
+Cartesian, so equations maps the rectangular one to the desired one. We allow
+user to set new coordinate system in three possible way:</p>
 
-<p>Now we cannot do that, so we need to automatically return 0.
-Below I demonstrate present usage of nabla operator on SymPy:</p>
-C = CoordSysCartesian('C')
-delop = Del()
-delop.dot(C.x*C.i)
-Derivative(C.x, C.x)
-v = x*i + y*j + z*k
-delop & v
-Derivative(C.x, C.x) + Derivative(C.y, C.y) + Derivative(C.z, C.z))
+a = CoordSys3D('a')
+
+a.connect_to_cartesian('spherical')
+
+a.connect_to_cartesian((a.x, a.y, a.z))
+
+x, y, z = Symbols('x y z')
+
+a.connect_to_cartesian((x, y, z), (x, y, z))
+
+
+<p>So we can set coordinate system by <code>str</code> from pre-defined <code>dict</code>. The second way
+is to do it by equations, where variables are base scalars. The last possibility
+is to create tuple which contains two tuples. In first, there should be variables
+which we want to use to define transformation equations, and in the second one
+transformation equation itself.</p>
+
+<p>During this time I&rsquo;ve created several PR, which corresponds directly to the
+transformation of coordinate system <a href="https://github.com/sympy/sympy/pull/12803">#12803</a>, <a href="https://github.com/sympy/sympy/pull/1288">#128822</a>, <a href="https://github.com/sympy/sympy/pull/12872">#12872</a>, but I also updated documentation <a href="https://github.com/sympy/sympy/pull/12871">#12871</a> and refactor some code. So now we have <code>CoordSys3D</code> instead of
+<code>CoordSysCartesian</code> <a href="https://github.com/sympy/sympy/pull/12829">#12829</a>. Updated documentation went into 1.1 release of SymPy.
+It was necessary to avoid mismatch between the code which was previously updated
+or deprecated and documentation</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-2/">&laquo; Week 2</a>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-3/">&laquo; Week 3</a>
     
-    
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-5/">Week 5 &raquo;</a>
     
   </div>
 </section>

@@ -394,7 +394,7 @@
   <h1> Week 2 </h1>
 
   <div id=sub-header>
-    13 June 2017 · 1 minute read
+    June 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
@@ -410,13 +410,12 @@ and cylindrical coordinate system. It was rather easy task. I had to only modifi
 stick only to this coordinate system. We can easily expand it to another in the future.</p>
 
 <p>Below is example how we can calculate <code>gradient</code>, <code>curl</code> and <code>divergence</code> in spherical coordinate system:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>A = CoordSysCartesian(<span style="font-style: italic">&#39;A&#39;</span>)
-A._set_lame_coefficient_mapping(<span style="font-style: italic">&#39;spherical&#39;</span>)
+A = CoordSysCartesian('A')
+A._set_lame_coefficient_mapping('spherical')
 
 gradient(3*A.x + 4*A.y)
 divergence(3*A.x*A.z*A.i + A.y*A.j + A.x*A.y*A.z*A.k)
 curl(A.x*A.i + A.y*A.j + A.z*A.k)
-</pre></div>
 
 <p>To sum up, This week I end up with two PR, which I think will be merged soon. We also started discussion
 about next step. I&rsquo;d say that the hardest difficulties are now in front of us.</p>
@@ -427,6 +426,8 @@ about next step. I&rsquo;d say that the hardest difficulties are now in front of
     
       <a class="basic-alignment left" href="https://szymag.github.io/post/week-1/">&laquo; Week 1</a>
     
+    
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-3/">Week 3 &raquo;</a>
     
   </div>
 </section>

@@ -6,10 +6,21 @@
     <description>Recent content on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 20 Jun 2017 23:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jul 2017 23:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 5</title>
+      <link>https://szymag.github.io/post/week-5/</link>
+      <pubDate>Tue, 04 Jul 2017 23:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-5/</guid>
+      <description>This posts contains summary of two weeks work.
+I was working on introducing transformation equations in CoordSysCartesian. We decide, up to now, to connect every other curvilinear coordinate system to Cartesian, so equations maps the rectangular one to the desired one. We allow user to set new coordinate system in three possible way:
+(Derivative(0, C.y) - Derivative(0, C.z))*C.i + (-Derivative(0, C.x) + Derivative(0, C.z))*C.j + (Derivative(0, C.x) - Derivative(0, C.y))*C.k So we can set coordinate system by str from pre-defined dict.</description>
+    </item>
     
     <item>
       <title>Week 3</title>
