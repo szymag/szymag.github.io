@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-uk">
   <head>
-	<meta name="generator" content="Hugo 0.24.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
@@ -19,10 +18,10 @@
     <title>
       
       
-         GSoC Report 
+         Week 6 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-6/">
 
     <style>
   * {
@@ -380,8 +379,6 @@
     <link rel="shortcut icon" href="https://szymag.github.io/favicon.ico">
 
     
-      <link href="https://szymag.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GSoC Report" />
-    
   </head>
 
   <body>
@@ -394,56 +391,56 @@
 
 
 <section id=content>
-  <ul class=posts_listing>
+  <h1> Week 6 </h1>
+
+  <div id=sub-header>
+    11 July 2017 · 1 minute read
+  </div>
+
+  <div class="entry-content">
+    <p>In the last week I didn&rsquo;t create any PR which is worth to mention so in this
+report I&rsquo;d like to introduce the concept which we&rsquo;re going to add <code>vector</code> module.</p>
+
+<p>Currently, in SymPy we have transformation equations but they&rsquo;re responsible
+only for rotation and translation. We have already implemented the transformation
+equations for changing type of coordinate system so we need to somehow deals with
+composition of this two kind of transformation. To do that, firstly we need to
+implement a method for obtaining transformation equations from rotation matrix.
+Secondly, we need to create generic method to compose two transformation. In
+<code>vector</code> module we are in linear regime so from mathematical point of view it is
+not complicated. We can do that by SymPy&rsquo;s <code>.subs()</code>:</p>
+
+eq11 = f(x,y,z)
+eq12 = g(z,y,z)
+eq13 = h(x,y,z) # First set of transformation equations
+
+eq21 = a(x,y,z)
+eq22 = b(x,y,z)
+eq23 = c(x,y,z) # Second set of transformation equations
+
+
+eq11.subs(x, eq21)
+eq11.subs(y, eq22)
+eq11.subs(z, eq23)
+
+
+<p>After setting first set of transformation equations we need to substitute the variables by
+second set of transformation equations.</p>
+
+  </div>
+
+  <div id=links>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-6/">Week 6</a></h2>
-        <div id=date>
-          <time>July 2017</time>
-        </div>
-      </li>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-5/">&laquo; Week 5</a>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-5/">Week 5</a></h2>
-        <div id=date>
-          <time>July 2017</time>
-        </div>
-      </li>
     
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-3/">Week 3</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
-    
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-2/">Week 2</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
-    
-      <li>
-        <h2><a href="https://szymag.github.io/post/week-1/">Week 1</a></h2>
-        <div id=date>
-          <time>June 2017</time>
-        </div>
-      </li>
-    
-      <li>
-        <h2><a href="https://szymag.github.io/post/week--2/">Week -2/Week -1</a></h2>
-        <div id=date>
-          <time>May 2017</time>
-        </div>
-      </li>
-    
-  </ul>
+  </div>
 </section>
 
   </div>
   
 </body>
 </html>
+
 
 
