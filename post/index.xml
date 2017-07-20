@@ -6,10 +6,19 @@
     <description>Recent content in Posts on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 11 Jul 2017 20:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jul 2017 20:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 7</title>
+      <link>https://szymag.github.io/post/week-7/</link>
+      <pubDate>Tue, 18 Jul 2017 20:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-7/</guid>
+      <description>During week 7 I continued my work on transformation equations for rotation. One PR #12960 which obtains transformation equations from rotation matrix was merged. I have prepared also method for composition of transformation equation but I didn&amp;rsquo;t push them. I need to still think how to arrange the whole structure. My mentor suggest that we can just use transformation equations instead of rotation matrix, because it&amp;rsquo;s just general concept. After that we could modify constructor in CoordSys3D class and put them transformation equation instead of rotation matrix.</description>
+    </item>
     
     <item>
       <title>Week 6</title>

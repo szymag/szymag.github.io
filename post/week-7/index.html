@@ -18,10 +18,10 @@
     <title>
       
       
-         Week 6 
+         Week 7 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/post/week-6/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-7/">
 
     <style>
   * {
@@ -391,47 +391,35 @@
 
 
 <section id=content>
-  <h1> Week 6 </h1>
+  <h1> Week 7 </h1>
 
   <div id=sub-header>
-    11 July 2017 · 1 minute read
+    18 July 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
-    <p>In the last week I didn&rsquo;t create any PR which is worth to mention so in this
-report I&rsquo;d like to introduce the concept which we&rsquo;re going to add <code>vector</code> module.</p>
+    <p>During week 7 I continued my work on transformation equations for rotation.
+One PR <a href="https://github.com/sympy/sympy/pull/12960">#12960</a> which obtains transformation
+equations from rotation matrix was merged. I have prepared also method for composition of
+transformation equation but I didn&rsquo;t push them. I need to still think how to arrange the whole
+structure. My mentor suggest that we can just use transformation equations instead of rotation
+matrix, because it&rsquo;s just general concept. After that we could modify constructor in <code>CoordSys3D</code>
+class and put them transformation equation instead of rotation matrix. I think it&rsquo;s good idea but
+it introduce lots of work with adaption of method which deals with rotation of coordinate system.</p>
 
-<p>Currently, in SymPy we have transformation equations but they&rsquo;re responsible
-only for rotation and translation. We have already implemented the transformation
-equations for changing type of coordinate system so we need to somehow deals with
-composition of this two kind of transformation. To do that, firstly we need to
-implement a method for obtaining transformation equations from rotation matrix.
-Secondly, we need to create generic method to compose two transformation. In
-<code>vector</code> module we are in linear regime so from mathematical point of view it is
-not complicated. We can do that by SymPy&rsquo;s <code>.subs()</code>:</p>
-<code>
-eq11 = f(x,y,z)
-eq12 = g(z,y,z)
-eq13 = h(x,y,z) # First set of transformation equations
+<p>The second topic which I got involved was unevaluated expression. In PR <a href="https://github.com/sympy/sympy/pull/12987">#12987</a>
+we have added class <code>Dot</code> and <code>Cross</code>. In this Pr we also add possibility to call &lsquo;dot&rsquo; and &lsquo;cross&rsquo;
+products independently from <code>Vector</code> class.</p>
 
-eq21 = a(x,y,z)
-eq22 = b(x,y,z)
-eq23 = c(x,y,z) # Second set of transformation equations
-
-
-eq11.subs(x, eq21)
-eq11.subs(y, eq22)
-eq11.subs(z, eq23)
-</code>
-
-<p>After setting first set of transformation equations we need to substitute the variables by
-second set of transformation equations.</p>
+<p>For <code>directional_derivative</code> there are still some work. We need to create class which will
+be callable if no scalar or vector is put and otherwise not. The simplest solution is to
+create two separate class but I&rsquo;m trying to omit this because I think that it&rsquo;s not intuitive for user.</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-5/">&laquo; Week 5</a>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-6/">&laquo; Week 6</a>
     
     
   </div>
