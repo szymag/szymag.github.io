@@ -6,10 +6,20 @@
     <description>Recent content on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 18 Jul 2017 20:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jul 2017 20:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 8</title>
+      <link>https://szymag.github.io/post/week-8/</link>
+      <pubDate>Tue, 25 Jul 2017 20:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-8/</guid>
+      <description>During week 8 I added several methods which calculate transformation equations for some specific situation. We&amp;rsquo;ve finished step, where transformation equations are obtained for rotation, translation, and changing the type of coordinate system. This all transitions are handled in vector module. We&amp;rsquo;ve also prepared the method for composition of any two kind of transformations, because coordinate system can be rotated and translated at the same time.
+My current task is to use already added methods in CoordSys3D constructor.</description>
+    </item>
     
     <item>
       <title>Week 7</title>

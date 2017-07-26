@@ -18,10 +18,10 @@
     <title>
       
       
-         Week 7 
+         Week 8 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/post/week-7/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-8/">
 
     <style>
   * {
@@ -391,35 +391,32 @@
 
 
 <section id=content>
-  <h1> Week 7 </h1>
+  <h1> Week 8 </h1>
 
   <div id=sub-header>
-    18 July 2017 · 1 minute read
+    July 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
-    <p>During week 7 I continued my work on transformation equations for rotation.
-One PR <a href="https://github.com/sympy/sympy/pull/12960">#12960</a> which obtains transformation
-equations from rotation matrix was merged. I have prepared also method for composition of
-transformation equation but I didn&rsquo;t push them. I need to still think how to arrange the whole
-structure. My mentor suggest that we can just use transformation equations instead of rotation
-matrix, because it&rsquo;s just general concept. After that we could modify constructor in <code>CoordSys3D</code>
-class and put them transformation equation instead of rotation matrix. I think it&rsquo;s good idea but
-it introduce lots of work with adaption of method which deals with rotation of coordinate system.</p>
+    <p>During week 8 I added several methods which calculate transformation equations for some specific situation.
+We&rsquo;ve finished step, where transformation equations are obtained for rotation, translation, and changing
+the type of coordinate system. This all transitions are handled in <code>vector</code> module. We&rsquo;ve also prepared the
+method for composition of any two kind of transformations, because coordinate system can be rotated and translated
+at the same time.</p>
 
-<p>The second topic which I got involved was unevaluated expression. In PR <a href="https://github.com/sympy/sympy/pull/12987">#12987</a>
-we have added class <code>Dot</code> and <code>Cross</code>. In this Pr we also add possibility to call &lsquo;dot&rsquo; and &lsquo;cross&rsquo;
-products independently from <code>Vector</code> class.</p>
+<p>My current task is to use already added methods in <code>CoordSys3D</code> constructor. We&rsquo;re going to define transformation
+equations similarly to rotation matrix. We will also add some method like <code>orient_new</code> to linking two coordinate system,
+where one of them is parent coordinate system.</p>
 
-<p>For <code>directional_derivative</code> there are still some work. We need to create class which will
-be callable if no scalar or vector is put and otherwise not. The simplest solution is to
-create two separate class but I&rsquo;m trying to omit this because I think that it&rsquo;s not intuitive for user.</p>
+<p>Including also inverse transformation equations allows us to easily express vectors and scalars from new coordinate
+system in terms of old coordinate system. Inverse transformation equations has also another one big advantage. We can always connect our coordinate system to Cartesian system. So, if we have two independent coordinate system defined by some transformation equations, we can recalculate some quantity to Cartesian one and then recalculate to the second
+coordinate system. This mechanism could be implemented in <code>express</code> function in <code>sympy/vector/functions.py</code> file.</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-6/">&laquo; Week 6</a>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-7/">&laquo; Week 7</a>
     
     
   </div>

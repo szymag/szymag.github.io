@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://szymag.github.io/post/week-8/</loc>
+    <lastmod>2017-07-25T20:41:21+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://szymag.github.io/post/week-7/</loc>
     <lastmod>2017-07-18T20:41:21+01:00</lastmod>
   </url>
@@ -44,13 +49,13 @@
   
   <url>
     <loc>https://szymag.github.io/</loc>
-    <lastmod>2017-07-18T20:41:21+01:00</lastmod>
+    <lastmod>2017-07-25T20:41:21+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://szymag.github.io/post/</loc>
-    <lastmod>2017-07-18T20:41:21+01:00</lastmod>
+    <lastmod>2017-07-25T20:41:21+01:00</lastmod>
     <priority>0</priority>
   </url>
   
