@@ -6,10 +6,19 @@
     <description>Recent content on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 25 Jul 2017 20:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Aug 2017 20:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 9</title>
+      <link>https://szymag.github.io/post/week-9/</link>
+      <pubDate>Wed, 02 Aug 2017 20:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-9/</guid>
+      <description>Reconstruction of constructor in CoordSys3D is like never ending story, but fortunately we are almost at the end of the work. We decide to distinguish two cases. When rotation matrix or location is set and when transformation is set. In the first case we are creating transformation equations from rotation matrix and translation vector. In the second, user is responsible for defining transformation equations but it is also possible to use some pre-defined curvilinear coordinate system.</description>
+    </item>
     
     <item>
       <title>Week 8</title>
