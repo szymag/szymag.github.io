@@ -6,10 +6,21 @@
     <description>Recent content on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 02 Aug 2017 20:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2017 20:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 10</title>
+      <link>https://szymag.github.io/post/week-10/</link>
+      <pubDate>Thu, 10 Aug 2017 20:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-10/</guid>
+      <description>During week 10 with my mentor, we finished creation of new CoordSys3D constructor. We can set now transformation while coordinate system is created. We&amp;rsquo;ve moved functionality from _connect_to_standard_cartesian to constructor so we support the same type of transformation as previously.
+Now I demonstrate shorty how coordinate system different that Caertsian can be created in SymPy:
+a = CoordSys3D(&#39;a&#39;, transformation=&#39;spherical&#39;, variable_names=[&#34;r&#34;, &#34;theta&#34;, &#34;phi&#34;]) a.lame_coefficients() a.transformation_to_parent() b = CoordSys3D(&#39;b&#39;, lambda r, theta, phi: (r*sin(theta)*cos(phi), r*sin(theta)*sin(phi), r*cos(theta)), variable_names=[&#34;</description>
+    </item>
     
     <item>
       <title>Week 9</title>

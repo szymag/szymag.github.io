@@ -18,10 +18,10 @@
     <title>
       
       
-         Week 5 
+         Week 10 
       
     </title>
-    <link rel="canonical" href="https://szymag.github.io/post/week-5/">
+    <link rel="canonical" href="https://szymag.github.io/post/week-10/">
 
     <style>
   * {
@@ -391,51 +391,40 @@
 
 
 <section id=content>
-  <h1> Week 5 </h1>
+  <h1> Week 10 </h1>
 
   <div id=sub-header>
-    July 2017 · 1 minute read
+    August 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
-    <p>This posts contains summary of two weeks work.</p>
+    <p>During week 10 with my mentor, we finished creation of new <code>CoordSys3D</code> constructor.
+We can set now <code>transformation</code> while coordinate system is created. We&rsquo;ve moved functionality from
+<code>_connect_to_standard_cartesian</code> to constructor so we support the same type of transformation as previously.</p>
 
-<p>I was working on introducing transformation equations in <code>CoordSysCartesian</code>.
-We decide, up to now, to connect every other curvilinear coordinate system to
-Cartesian, so equations maps the rectangular one to the desired one. We allow
-user to set new coordinate system in three possible way:</p>
+<p>Now I demonstrate shorty how coordinate system different that Caertsian can be created in SymPy:</p>
+a = CoordSys3D('a', transformation='spherical',
+                   variable_names=["r", "theta", "phi"])
+                   
+a.lame_coefficients()
+a.transformation_to_parent()
 
-a = CoordSys3D('a')
+b = CoordSys3D('b', lambda r, theta, phi: (r*sin(theta)*cos(phi), r*sin(theta)*sin(phi), r*cos(theta)),
+                   variable_names=["r", "theta", "phi"])
+                   
+c = CoordSys3D('c', [(r, theta, z), (r*cos(theta), r*sin(theta), z)],
+                   variable_names=["r", "theta", "z"])
 
-a.connect_to_cartesian('spherical')
+<p>We assumed here that even if <code>parent</code> isn&rsquo;t set, there is some standard one which we refers to.</p>
 
-a.connect_to_cartesian((a.x, a.y, a.z))
-
-x, y, z = Symbols('x y z')
-
-a.connect_to_cartesian((x, y, z), (x, y, z))
-
-
-<p>So we can set coordinate system by <code>str</code> from pre-defined <code>dict</code>. The second way
-is to do it by equations, where variables are base scalars. The last possibility
-is to create tuple which contains two tuples. In first, there should be variables
-which we want to use to define transformation equations, and in the second one
-transformation equation itself.</p>
-
-<p>During this time I&rsquo;ve created several PR, which corresponds directly to the
-transformation of coordinate system <a href="https://github.com/sympy/sympy/pull/12803">#12803</a>, <a href="https://github.com/sympy/sympy/pull/1288">#128822</a>, <a href="https://github.com/sympy/sympy/pull/12872">#12872</a>, but I also updated documentation <a href="https://github.com/sympy/sympy/pull/12871">#12871</a> and refactor some code. So now we have <code>CoordSys3D</code> instead of
-<code>CoordSysCartesian</code> <a href="https://github.com/sympy/sympy/pull/12829">#12829</a>. Updated documentation went into 1.1 release of SymPy.
-It was necessary to avoid mismatch between the code which was previously updated
-or deprecated and documentation</p>
+<p>Another thing which I was involved for a while, was support for pretty and LaTeX printing for unevaluated expression in <code>vector</code> package.</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-3/">&laquo; Week 3</a>
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-9/">&laquo; Week 9</a>
     
-    
-      <a class="basic-alignment left" href="https://szymag.github.io/post/week-6/">Week 6 &raquo;</a>
     
   </div>
 </section>

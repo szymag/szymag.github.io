@@ -394,7 +394,7 @@
   <h1> Week 6 </h1>
 
   <div id=sub-header>
-    11 July 2017 · 1 minute read
+    July 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
@@ -409,7 +409,7 @@ implement a method for obtaining transformation equations from rotation matrix.
 Secondly, we need to create generic method to compose two transformation. In
 <code>vector</code> module we are in linear regime so from mathematical point of view it is
 not complicated. We can do that by SymPy&rsquo;s <code>.subs()</code>:</p>
-<code>
+
 eq11 = f(x,y,z)
 eq12 = g(z,y,z)
 eq13 = h(x,y,z) # First set of transformation equations
@@ -422,7 +422,7 @@ eq23 = c(x,y,z) # Second set of transformation equations
 eq11.subs(x, eq21)
 eq11.subs(y, eq22)
 eq11.subs(z, eq23)
-</code>
+
 
 <p>After setting first set of transformation equations we need to substitute the variables by
 second set of transformation equations.</p>
@@ -433,6 +433,8 @@ second set of transformation equations.</p>
     
       <a class="basic-alignment left" href="https://szymag.github.io/post/week-5/">&laquo; Week 5</a>
     
+    
+      <a class="basic-alignment left" href="https://szymag.github.io/post/week-7/">Week 7 &raquo;</a>
     
   </div>
 </section>
