@@ -6,10 +6,21 @@
     <description>Recent content in Posts on GSoC Report</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 10 Aug 2017 20:41:21 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Aug 2017 20:41:21 +0100</lastBuildDate>
     
 	<atom:link href="https://szymag.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Week 11</title>
+      <link>https://szymag.github.io/post/week-11/</link>
+      <pubDate>Wed, 23 Aug 2017 20:41:21 +0100</pubDate>
+      
+      <guid>https://szymag.github.io/post/week-11/</guid>
+      <description>During week 11 I extended differential operator to handle mixed coordinate system.
+Mixed means that scalar or vector which we&amp;rsquo;re using as argument has elements coming from several different coordinate systems. Not necessarily connected. These work were split into three PR&amp;rsquo;s, one for every differential operator, gradient#13118 , divergence#13128 and curl#13154.
+To implement this, we need to only take care about product rule for scalar and vector, but they are well defined.</description>
+    </item>
     
     <item>
       <title>Week 10</title>
